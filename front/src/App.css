@@ -1,0 +1,492 @@
+/* @font-face {
+  font-family: 'Grotesk BQ Light';
+  src: url(../fonts/akzidenz-grotesk-bq-light.otf);
+} */
+
+html, body, a, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0px;
+  margin: 0px;
+  font-family:  Grotesk BQ Light,Helvetica,Arial !important;
+}
+
+#btn_cadastro, #btn_login{
+  display: inline-block;
+  /*background-color: brown;*/
+  padding: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;    
+  position: initial;
+  margin-top: 5px;
+}
+
+
+.cabecalho {
+  /*background-color: blue;*/
+  height: 70px;
+  width: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.01), 0 10px 30px rgba(0,0,0,0.08);
+  z-index: 1000000;
+}
+
+
+button {
+  color: white;
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  width: 150px;
+}
+
+#btn_cadastro{
+  float: left;
+}
+
+#btn_login {
+  float: right;
+}
+
+#btn_sair {
+  float: right;
+}
+
+#tela-inicial {
+  display: block;
+}
+
+.corpo {
+  background-image: url("imagem/background.png");
+  background-size: 400px;
+  background-position: center;
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.corpo.lista {
+  height: 150vh;
+}
+
+.meio {
+  width: 800px;
+  height: 800px;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-top: -100px;
+  text-align: center;
+}
+
+.meio2 {
+  width: 90%;
+  height: 90%;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to bottom,rgba(19,170,82,0.2),#fff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.meio3 {
+  width: 88%;
+  height: 88%;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to bottom,rgba(19,170,82,0.2),#fff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  margin-top: -25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bem-vindo-h1{
+  color: #116149;
+  margin-bottom: 0;
+  font-size: 48px;
+  line-height: 58px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  display: block;
+  margin-block-start: 0,67em;
+  margin-block-end: 0,67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.meio-h2, meio-h4 {
+  color: #0b4130;
+  margin: 15px;
+}
+
+.pesquisa {
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pesquisa > select {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 4px; 
+}
+
+.resultados {
+  display: flex;
+}
+
+.moeda-principal{
+  color: white;
+  width: 50%;
+  height: 800px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
+.listas > div > ul {
+  display: contents;
+  justify-content: center;
+  align-items: center;
+}
+.listas > div > ul > li {
+  float: left;
+  list-style-type: none;
+  background-color: #13aa52;
+  border: 1px #FFF solid;
+  border-radius: 50px;
+  margin: 8px;
+  width: 160px;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  float: left;
+  width: 200px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.dados-moedas{
+  background-color: #13aa52;
+  border-radius: 50px;
+  width: 180px;
+}
+.dados-moedas h3{
+  height: 45px;
+}
+
+.rigth {
+  float: rigth;
+  width: 200px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.contas {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.valores-convertidos-unico {
+  display: none;
+  color: white;
+}
+
+.contas > div:first-child {
+  margin-top: 150px;
+}
+
+.contas > div {
+  text-align: center;
+}
+.contas > div > label {
+  /* background-color: #13aa52; */
+  width: 100%;
+}
+
+#login, #cadastro {
+  text-align: center;
+}
+
+#login > div, #cadastro > div {
+  margin-top: 20px;
+}
+
+#login > div > input, #cadastro > div > input {
+  margin-top: 10px;
+}
+
+#login > button {
+  margin-top: 20px;
+}
+
+#cadastrar, #logar{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-top: 20px;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#cadastrar {
+  float: left;
+}
+
+#logar {
+  float: right;
+}
+
+span {
+  color: red;
+  display: block;
+}
+
+input:invalid {
+  border: 1px solid red;    
+}
+
+#btn-cadastrar {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+@media screen and (max-width: 1000px){
+
+  .corpo.lista {
+      height: 100vh !important; 
+  }
+
+  .pesquisa {
+      height: 200px;
+      width: 300px;
+      align-items: center;
+      display: block;
+      justify-content: center;
+      text-align: center;
+      margin-left: 25%;
+  }
+
+  .moeda-principal{
+      display: none;
+  }
+
+  .valores-convertidos-unico {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .resultados {
+      justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px){
+
+  .corpo.lista {
+      height: 100vh !important; 
+  }
+
+  .cabecalho > button{
+      width: 100px;
+  }
+   
+  .meio {
+      width: 600px;
+      height: 600px;
+      margin-top: -75px;
+  }
+
+  input[type=text], input[type=password], input[type=number], input[type=email]{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  #cadastro > button{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      margin-top: 20px;
+  }
+
+  span {
+      color: red;
+      display: block;
+  }
+  
+  input:invalid {
+      border: 1px solid red;    
+  }
+
+  button {
+      font-size: 14px;
+      width: 150px;
+      margin-top: 10px;
+  }
+
+  .cabecalho > button {
+      margin-top: 10px;
+  }
+}
+
+
+
+@media screen and (max-width: 600px){
+
+  .corpo.lista {
+      height: 100vh !important; 
+  }
+
+  .pesquisa {
+      margin-left: 20%;
+  }
+
+  .meio {
+      width: 500px;
+      height: 500px;
+      margin-top: -75px;
+  }
+
+  input[type=text], input[type=password], input[type=number], input[type=email]{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  #cadastro > button{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      margin-top: 20px;
+  }
+
+  span {
+      color: red;
+      display: block;
+  }
+  
+  input:invalid {
+      border: 1px solid red;    
+  }
+
+  button {
+      font-size: 14px;
+      width: 150px;
+      margin-top: 10px;
+  }
+
+  .cabecalho > button {
+      margin-top: 10px;
+  }
+
+  #cadastro {
+      margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 400px){
+
+  .corpo.lista {
+      height: 100vh !important; 
+  }
+
+  .pesquisa {
+      margin-left: 10%;
+  }
+
+  .meio {
+      width: 500px;
+      height: 500px;
+      margin-top: -75px;
+      margin-left: -60px;
+  }
+
+  input[type=text], input[type=password], input[type=number], input[type=email]{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  #cadastro > button{
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      margin-top: 20px;
+  }
+
+  span {
+      color: red;
+      display: block;
+  }
+  
+  input:invalid {
+      border: 1px solid red;    
+  }
+
+  button {
+      font-size: 14px;
+      width: 150px;
+      margin-top: 10px;
+  }
+
+  .cabecalho > button {
+      margin-top: 10px;
+  }
+
+  #cadastro {
+      margin-top: 100px;
+  }
+}
+
