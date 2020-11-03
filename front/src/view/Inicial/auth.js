@@ -3,6 +3,13 @@ export function auth() {
     return localStorage.token;
 }
 
+export function admin(){
+    if(localStorage.admin == 'true')
+      return true;
+    else
+      return false;
+}
+
 export function authCadastro() {
   console.log(localStorage.tokenCadastro);
   return localStorage.tokenCadastro;
@@ -10,6 +17,10 @@ export function authCadastro() {
 
 export function setUser(token) {
   localStorage.setItem("token", token);
+}
+
+export function setAdmin(admin){
+  localStorage.setItem('admin', admin);
 }
 
 export function setUserCadastro(token) {

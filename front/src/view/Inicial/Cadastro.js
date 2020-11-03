@@ -60,7 +60,7 @@ export default function App() {
                         name="username"
                         required="required"
                         onChange={(ev) => setEmail(ev.target.value)}
-                        onFocus={() => validaEmail()}>
+                        onBlur={() => validaEmail()}>
                     </input>
                     <span>{erroEmail}</span>
                 </div>
@@ -82,7 +82,7 @@ export default function App() {
                     placeholder="Insira a Senha" 
                     name="password" 
                     required="required"
-                    onInput={(ev) => validaPassword(ev.target.value)}/>
+                    onChange={(ev) => validaPassword(ev.target.value)}/>
                     
                 </div>
                 <span>{erroPassword}</span>

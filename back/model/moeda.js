@@ -19,17 +19,17 @@ module.exports = class Moedas{
         moeda.insertOne({sigla : sigla, nome : nome, valor : valor});
     }
 
-    static async find(siglaMoeda1, siglaMoeda2){
+    static async find(nomeMoeda1, nomeMoeda2){
         const conn = await mongoCliente.connect(urlConnect);
         const db = conn.db();
-        const moeda1 = await db.collection('moedas').find({sigla : RegExp(siglaMoeda1)}).toArray();
-        const moeda2 = await db.collection('moedas').find({sigla : RegExp(siglaMoeda2)}).toArray();
+        const moeda1 = await db.collection('moedas').find({nome : RegExp(nomeMoeda1)}).toArray();
+        const moeda2 = await db.collection('moedas').find({nome : RegExp(nomeMoeda2)}).toArray();
         if(moeda1[0].sigla == 'BRL'){
-            return moeda1 + moeda2;
+            return {moeda1, moeda2};
         }else {
-            moeda1[0].valor = invertValue(moeda2[0].value);
-            moeda2[0].valor = 1;
-            return moeda1 + moeda2;
+            moeda2[0].valor = (1 / moeda1[0].valor);
+            moeda1[0].valor = 1;
+            return {moeda1, moeda2};
         }
     }
 
@@ -47,7 +47,5 @@ module.exports = class Moedas{
         return moeda;
     }
 
-    static async invertValue(valor){
-        return 1 / valor;
-    }
+    
 }

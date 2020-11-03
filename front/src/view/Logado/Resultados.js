@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function App() {
     const valorMoeda1 = window.localStorage.getItem('valorMoeda1');
-    const valorMoeda2 = window.localStorage.getItem('valorMoeda');
+    const valorMoeda2 = window.localStorage.getItem('valorMoeda2');
     const [converte, setConvert] = useState(0);
 
     return(
@@ -32,19 +32,19 @@ export default function App() {
                         <div className="dados-moedas">
                             <h2 id="sigla-moeda-2">{window.localStorage.getItem('siglaMoeda2')}</h2>
                             <h3 id="nome-moeda-2">{window.localStorage.getItem('nomeMoeda2')}</h3>
-                            <h4 id="valor-moeda-2">{valorMoeda2}</h4>
+                            <h4 id="valor-moeda-2">{(parseFloat(valorMoeda2).toFixed(4))}</h4>
                         </div>
                         <ul id="valores-convertidos">
-                            <li id="1">{valorMoeda2}</li>
-                            <li id="2">{valorMoeda2*2}</li>
-                            <li id="5">{valorMoeda2*5}</li>
-                            <li id="10">{valorMoeda2*10}</li>
-                            <li id="100">{valorMoeda2*100}</li>
-                            <li id="1000">{valorMoeda2*1000}</li>
-                            <li id="5000">{valorMoeda2*5000}</li>
-                            <li id="10000">{valorMoeda2*10000}</li>
-                            <li id="50000">{valorMoeda2*50000}</li>
-                            <li id="100000">{valorMoeda2*100000}</li>                     
+                            <li id="1">{(parseFloat(valorMoeda2).toFixed(4))}</li>
+                            <li id="2">{(parseFloat(valorMoeda2)*2).toFixed(4)}</li>
+                            <li id="5">{(parseFloat(valorMoeda2)*5).toFixed(4)}</li>
+                            <li id="10">{(parseFloat(valorMoeda2)*10).toFixed(4)}</li>
+                            <li id="100">{(parseFloat(valorMoeda2)*100).toFixed(4)}</li>
+                            <li id="1000">{(parseFloat(valorMoeda2)*1000).toFixed(4)}</li>
+                            <li id="5000">{(parseFloat(valorMoeda2)*5000).toFixed(4)}</li>
+                            <li id="10000">{(parseFloat(valorMoeda2)*10000).toFixed(4)}</li>
+                            <li id="50000">{(parseFloat(valorMoeda2)*50000).toFixed(4)}</li>
+                            <li id="100000">{(parseFloat(valorMoeda2)*100000).toFixed(4)}</li>                     
                         </ul>
                     </div>
                 </div>

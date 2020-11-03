@@ -8,10 +8,10 @@ router.get('/', function(req, res) {
 });
 
 router.post('/login', async (req, res) => {
-  var token = await userDAO.authUser(req.query.email, req.query.password);
-  console.log(token);
-    if(token != undefined){
-      res.json({auth : true, token : token});
+  var resToken = await userDAO.authUser(req.query.email, req.query.password);
+  console.log(resToken.token);
+    if(resToken.token != undefined){
+      res.json({auth : true, token : resToken.token, admin : resToken.admin});
     }else res.json({auth : false, token : null});
 });
 

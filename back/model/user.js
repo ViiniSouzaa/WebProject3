@@ -12,7 +12,7 @@ module.exports = class Users {
             var id = user[0].id;
             var token = jwt.sign({id}, process.env.SECRET, {
                 expiresIn: 300});
-            return token;
+            return {token : token, admin : user[0].admin};
         }
         else return undefined;
     }
@@ -31,7 +31,7 @@ module.exports = class Users {
         const conn = await mongoCliente.connect(urlConnect);
             const db = conn.db();
             const users = db.collection('users');
-            users.insertOne({email : email, password : senha});
+            users.insertOne({email : email, password : senha, admin : false});
         conn.close();
     }
 

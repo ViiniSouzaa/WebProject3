@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import React from 'react';
 import '../../App.css';
 import Tela from "./Tela";
-import Tela2 from "../Logado/Tela2"
-import { auth } from "./auth";
+import Tela2 from "../Logado/Tela2";
+import { admin, auth } from "./auth";
 import Login from "./Login";
-import Cadastro from "./Cadastro"
+import Cadastro from "./Cadastro";
 import TelaInicial from "./TelaInicial";
+import TelaAdmin from '../Logado/TelaAdmin';
+import Pesquisa from '../Logado/Pesquisa';
 
 export default function App() {
   return (
@@ -16,16 +18,24 @@ export default function App() {
           exact
           path="/"
           component={() =>
-            !auth() ? <Tela /> : <Redirect to="/logado" />
+            !auth()   ? <Tela /> : <Redirect to="/logado" />
           }
         />
         <Route
           exact
           path="/logado"
           component={() =>
-            auth() ? <Tela2 /> : <Redirect to="/inicial" />
+            auth() && !admin() ? <Tela2 /> : <Redirect to="/admin" />
           }
         />
+        <Route
+          exact
+          path="/admin"
+          component={() =>
+            auth() && admin() ? <TelaAdmin /> : <Redirect to="/inicial" />
+          }
+        />
+          <Route path="/pesquisa" component={Pesquisa} />
         <Route path="/inicial" component={TelaInicial} />
         <Route path="/login" component={Login} />
         <Route path="/cadastro" component={Cadastro} />

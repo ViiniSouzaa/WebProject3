@@ -20,7 +20,7 @@ router.get('/findAll', async (req, res) => {
 });
 
 router.get('/findConvert', async(req, res) =>{
-    res.json(await moedaDAO.find(req.query.sigla1, req.query.sigla2));
+    res.json(await moedaDAO.find(req.query.moeda1, req.query.moeda2));
 });
 
 module.exports = router;
